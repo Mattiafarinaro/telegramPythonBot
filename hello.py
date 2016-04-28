@@ -17,6 +17,9 @@ bot = telegram.Bot(token=TOKEN)
 def webhook_handler():
     if request.method == "POST":
         # retrieve the message in JSON and then transform it to Telegram object
+
+        print request
+
         update = telegram.Update.de_json(request.get_json(force=True))
 
         chat_id = update.message.chat.id
